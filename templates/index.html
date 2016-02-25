@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}青大{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>您好, {% if data %}{{ data['xm'] }}, 欢迎登录!</h1>
+    院系：{{ data['yx'] }}<br>
+    专业：{{ data['zy'] }}<br>
+    班级：{{ data['bj'] }}
+    {% else %}欢迎访问!</h1>{% endif %}
+</div>
+{% if score %}
+<h2>个人成绩</h2>
+{% for d in score.items() %}
+{{ " : ".join(d).decode("utf-8") }}<br>
+{% endfor %}
+{% endif %}
+<br>
+<br>
+{% if form %}
+{{ wtf.quick_form(form) }}
+{% endif %}
+{% endblock %}
