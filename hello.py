@@ -73,7 +73,7 @@ def user():
 @app.route('/scores', methods=['GET'])
 def score():
     global cookies, data, score
-    return render_template('index.html', data=data, scores=score)
+    return render_template('index.html', data=data, score=score)
 
 
 if __name__ == '__main__':

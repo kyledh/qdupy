@@ -5,7 +5,7 @@
 
 {% block page_content %}
 <div class="page-header">
-    <h1>您好, {% if data %}{{ data['xm'] }}, 欢迎登录!</h1>
+    <h1>您好, {% if data %}{{ data['xm'] }}!</h1>
     院系：{{ data['yx'] }}<br>
     专业：{{ data['zy'] }}<br>
     班级：{{ data['bj'] }}
@@ -20,6 +20,7 @@
 <br>
 <br>
 {% if form %}
+<h2>查询成绩</h2>
 {{ wtf.quick_form(form) }}
 {% endif %}
 {% endblock %}
